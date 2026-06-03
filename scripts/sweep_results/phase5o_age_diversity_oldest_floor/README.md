@@ -25,6 +25,12 @@ cost as `phase5k_task_floor` (~70 min total on the prior host). The floor
 defaults to 2; override with `POOL_OLDEST_FLOOR=<k> bash run_ab.sh`. The
 script is idempotent: per-arm JSONs that already exist are skipped.
 
+`bash run_floor6_nofifo.sh` runs the newer floor-6 candidate for seeds 1-5
+without rerunning FIFO, using the recorded seed-1 recipe including
+`--adapt-n 50`. It writes
+`age-diversity-oldest-floor_floor6_seed*.json` and
+`summary_floor6_nofifo.json`.
+
 ## Required validation
 The `fifo` arm must reproduce 90.94% +/- 0.31 mean accuracy from
 `scripts/sweep_results/phase5k_task_floor/summary_ab.json`

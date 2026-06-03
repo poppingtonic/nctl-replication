@@ -50,6 +50,7 @@ Benchmark harnesses:
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/README.md`
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_ab.sh`
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_ab_nofifo.sh`
+- `scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_floor6_nofifo.sh`
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/summarise.py`
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/summarise_nofifo.py`
 
@@ -59,6 +60,7 @@ Optional result artifacts:
 - `scripts/sweep_results/phase5n_age_bucket_floor/summary_ab.json`
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/summary_ab.json`
 - `scripts/sweep_results/phase5o_age_diversity_oldest_floor/summary_nofifo.json`
+- `scripts/sweep_results/phase5o_age_diversity_oldest_floor/summary_floor6_nofifo.json`
 - per-seed JSON files used to produce those summaries
 
 ## Excluded From Source Releases
@@ -101,6 +103,6 @@ Use semantic research-artifact tags, for example:
 nctl-replication-v0.1
 ```
 
-The release notes should state that the strict task-free floor-4 candidate is a
-near replication (`95.043%` vs `95.07%`) rather than a confirmed exact closure of
-the paper gap.
+The release notes should state that the strict task-free floor-6 seed-1 run
+reaches `95.20%` average accuracy with `4.32%` average forgetting, while the
+floor-4 five-seed sweep remains a near replication (`95.043%` vs `95.07%`).

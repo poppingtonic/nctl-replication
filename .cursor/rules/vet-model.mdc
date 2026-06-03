@@ -1,0 +1,15 @@
+---
+description: Default model for vet checks
+alwaysApply: true
+---
+
+# Vet Model
+
+When running `vet`, pass `--model gpt-5-mini` unless the user explicitly
+specifies a different vet model.
+
+Example:
+
+```bash
+vet "review the current changes" --model gpt-5-mini
+```

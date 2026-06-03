@@ -12,13 +12,17 @@ The target paper result for Split-MNIST is:
 95.07% average accuracy
 ```
 
-The strongest strict task-free five-seed result captured by this artifact is:
+The strongest strict task-free seed-1 run captured by this artifact is:
 
 ```text
-95.043% average accuracy
-age-diversity-oldest-floor, pool_oldest_floor=4
-0.027 percentage points below the paper target
+95.20% average accuracy
+4.32% average forgetting
+age-diversity-oldest-floor, pool_oldest_floor=6
+0.13 percentage points above the paper target
 ```
+
+The earlier five-seed floor-4 sweep reached `95.043%` average accuracy, 0.027
+percentage points below the paper target.
 
 Diagnostic task-ID-assisted retention reaches about `95.46%`, identifying model
 pool retention as the remaining gap.  Because that diagnostic consumes
@@ -63,7 +67,7 @@ python3 scripts/run_split_mnist.py mnist \
   --nodes 50-25-1 --lr 0.001 \
   --min-segment 512 --pool 80 --pool-reservoir 10 \
   --pool-update-policy paper --pool-alpha 0.0 --pool-beta 0.0 \
-  --pool-evict-policy age-diversity-oldest-floor --pool-oldest-floor 4 \
+  --pool-evict-policy age-diversity-oldest-floor --pool-oldest-floor 6 \
   --active-state per-level --prediction-mode ptw_dp \
   --chunk-size 1024 --posterior-temp 1.0 \
   --adapt-n 50 \

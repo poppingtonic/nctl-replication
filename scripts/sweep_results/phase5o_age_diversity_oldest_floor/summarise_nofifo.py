@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
-"""Summarise the floor=4 candidate-only follow-up against existing baselines."""
+"""Summarise a candidate-only oldest-floor follow-up against existing baselines."""
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 import statistics
 import time
 
 ROOT = pathlib.Path(__file__).resolve().parent
 CANDIDATE = "age-diversity-oldest-floor"
-FLOOR = 4
+FLOOR = int(os.environ.get("POOL_OLDEST_FLOOR", "4"))
+SUMMARY_OUT = os.environ.get(
+    "SUMMARY_OUT",
+    "summary_nofifo.json" if FLOOR == 4 else f"summary_floor{FLOOR}_nofifo.json",
+)
 PAPER_TARGET = 95.07
 
 
@@ -32,7 +37,9 @@ def _row_from_file(path: pathlib.Path) -> dict:
     try:
         d = json.loads(path.read_text())
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-        raise SystemExit(f"could not read floor-4 result {path.name}: {exc}") from exc
+        raise SystemExit(
+            f"could not read floor-{FLOOR} result {path.name}: {exc}"
+        ) from exc
     return {
         "file": path.name,
         "seed": d.get("seed"),
@@ -62,7 +69,7 @@ def _aggregate_rows(label: str, rows: list[dict]) -> dict:
     }
 
 
-def _aggregate_floor4() -> dict:
+def _aggregate_floor() -> dict:
     files = sorted(ROOT.glob(f"{CANDIDATE}_floor{FLOOR}_seed*.json"))
     rows = [_row_from_file(f) for f in files]
     return _aggregate_rows(f"{CANDIDATE}-floor{FLOOR}", rows)
@@ -137,32 +144,31 @@ def main() -> int:
     floor2["final_task_accuracy_mean"] = _per_task_mean(floor2.get("results", []))
     fifo["final_task_accuracy_mean"] = _per_task_mean(fifo.get("results", []))
 
-    floor4 = _aggregate_floor4()
+    floor = _aggregate_floor()
+    prefix = f"floor{FLOOR}"
     summary = {
-        "experiment": "phase5o_age_diversity_oldest_floor_floor4_nofifo",
+        "experiment": f"phase5o_age_diversity_oldest_floor_{prefix}_nofifo",
         "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "paper_target_avg_accuracy": PAPER_TARGET,
-        "floor4_crosses_paper_target": (
-            floor4["avg_accuracy_mean"] is not None
-            and floor4["avg_accuracy_mean"] >= PAPER_TARGET
+        f"{prefix}_crosses_paper_target": (
+            floor["avg_accuracy_mean"] is not None
+            and floor["avg_accuracy_mean"] >= PAPER_TARGET
         ),
-        "floor4_delta_to_paper_target": (
-            floor4["avg_accuracy_mean"] - PAPER_TARGET
-            if floor4["avg_accuracy_mean"] is not None
+        f"{prefix}_delta_to_paper_target": (
+            floor["avg_accuracy_mean"] - PAPER_TARGET
+            if floor["avg_accuracy_mean"] is not None
             else None
         ),
         "fifo_baseline": fifo,
         "floor2_baseline": floor2,
-        "floor4_candidate": floor4,
-        "floor4_vs_fifo": _comparison(floor4, fifo),
-        "floor4_vs_floor2": _comparison(floor4, floor2),
+        f"{prefix}_candidate": floor,
+        f"{prefix}_vs_fifo": _comparison(floor, fifo),
+        f"{prefix}_vs_floor2": _comparison(floor, floor2),
     }
     try:
-        (ROOT / "summary_nofifo.json").write_text(
-            json.dumps(summary, indent=2, sort_keys=True)
-        )
+        (ROOT / SUMMARY_OUT).write_text(json.dumps(summary, indent=2, sort_keys=True))
     except OSError as exc:
-        raise SystemExit(f"could not write summary_nofifo.json: {exc}") from exc
+        raise SystemExit(f"could not write {SUMMARY_OUT}: {exc}") from exc
     print(json.dumps(summary, indent=2, sort_keys=True))
     return 0
 

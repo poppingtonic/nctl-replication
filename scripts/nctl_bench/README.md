@@ -12,10 +12,12 @@ The current research target is the NCTL paper's Split-MNIST result:
 95.07% average accuracy
 ```
 
-The strict reproduction path (task-free, without leaking task ids) is close but not yet formally closed:
-the strongest five-seed task-free result recorded so far is
-`age-diversity-oldest-floor` with `pool_oldest_floor=4`, at `95.043%` average
-accuracy, 0.027 percentage points below the paper target.
+The strict reproduction path is task-free and does not leak task ids. The
+strongest seed-1 task-free run recorded so far is
+`age-diversity-oldest-floor` with `pool_oldest_floor=6`, at `95.20%` average
+accuracy and `4.32%` average forgetting, 0.13 percentage points above the paper
+target. The earlier five-seed floor-4 sweep reached `95.043%` average accuracy,
+0.027 percentage points below the target.
 
 ## Where This Fits
 
@@ -69,7 +71,7 @@ python3 scripts/run_split_mnist.py mnist \
   --nodes 50-25-1 --lr 0.001 \
   --min-segment 512 --pool 80 --pool-reservoir 10 \
   --pool-update-policy paper --pool-alpha 0.0 --pool-beta 0.0 \
-  --pool-evict-policy age-diversity-oldest-floor --pool-oldest-floor 4 \
+  --pool-evict-policy age-diversity-oldest-floor --pool-oldest-floor 6 \
   --active-state per-level --prediction-mode ptw_dp \
   --chunk-size 1024 --posterior-temp 1.0 \
   --adapt-n 50 \
@@ -104,9 +106,9 @@ The useful sequence of diagnostics was:
 3. `age-diversity` recovered most of the lift without task IDs, but still left
    the earliest task under-retained.
 4. `age-diversity-oldest-floor` protects the oldest few snapshots and then
-   applies age-diversity to the rest. With floor 4 it reached `95.043%`,
-   essentially at the paper line but still slightly below it on the five-seed
-   mean.
+   applies age-diversity to the rest. With floor 4 it reached `95.043%` on the
+   five-seed mean, essentially at the paper line; with floor 6, the recorded
+   seed-1 run reached `95.20%` average accuracy with `4.32%` forgetting.
 
 Relevant sweep harnesses live in:
 

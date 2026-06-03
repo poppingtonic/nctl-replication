@@ -59,7 +59,7 @@ python3 scripts/run_split_mnist.py mnist \
   --nodes 50-25-1 --lr 0.001 \
   --min-segment 512 --pool 80 --pool-reservoir 10 \
   --pool-update-policy paper --pool-alpha 0.0 --pool-beta 0.0 \
-  --pool-evict-policy age-diversity-oldest-floor --pool-oldest-floor 4 \
+  --pool-evict-policy age-diversity-oldest-floor --pool-oldest-floor 6 \
   --active-state per-level --prediction-mode ptw_dp \
   --chunk-size 1024 --posterior-temp 1.0 \
   --adapt-n 50 \
@@ -69,26 +69,29 @@ python3 scripts/run_split_mnist.py mnist \
 The run should print a startup line showing that the multilevel CUDA extension
 loaded and has `forward_update_with_resets`.
 
+The recorded floor-6 seed-1 run in `run-03-06-2026-17:47:27.json` produced
+`avg_accuracy = 95.19998391137133` and
+`avg_forgetting = 4.316164392373658`.
+
 ## 5. Five-Seed Strict Candidate
 
-The floor-4 candidate-only rerun reuses the previously reproduced FIFO baseline
-and summarizes against the floor-2 candidate:
+The floor-6 candidate-only rerun uses the recorded seed-1 recipe and runs seeds
+1-5 without rerunning FIFO:
 
 ```bash
-bash scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_ab_nofifo.sh
+bash scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_floor6_nofifo.sh
 ```
 
 The summary is written to:
 
 ```text
-scripts/sweep_results/phase5o_age_diversity_oldest_floor/summary_nofifo.json
+scripts/sweep_results/phase5o_age_diversity_oldest_floor/summary_floor6_nofifo.json
 ```
 
-Expected headline:
+The older floor-4 candidate-only rerun remains available as:
 
-```text
-floor4_candidate.avg_accuracy_mean ~= 95.0433
-floor4_delta_to_paper_target ~= -0.0267
+```bash
+bash scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_ab_nofifo.sh
 ```
 
 ## 6. Full FIFO vs Candidate A/B
