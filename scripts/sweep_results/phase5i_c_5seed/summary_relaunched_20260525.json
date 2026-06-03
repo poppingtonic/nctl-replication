@@ -1,0 +1,114 @@
+{
+  "avg_accuracy_max": 91.37046735862947,
+  "avg_accuracy_mean": 90.94496938959395,
+  "avg_accuracy_min": 90.44986396901385,
+  "avg_accuracy_std_pop": 0.3096976724858333,
+  "avg_forgetting_mean": 9.623081688562259,
+  "avg_forgetting_std_pop": 0.3952126752286412,
+  "created_utc": "2026-05-25T13:09:41Z",
+  "experiment": "phase5i_c_5seed",
+  "n": 5,
+  "recipe": "pool80_ms512_temp1_ab00_in_place_eval_20260525",
+  "results": [
+    {
+      "avg_accuracy": 91.14670049607385,
+      "avg_forgetting": 9.382768661495511,
+      "event_counts": {
+        "append": 6064,
+        "evict": 10805,
+        "refine": 411,
+        "skip": 48
+      },
+      "file": "seed1_pool80.json",
+      "seed": 1,
+      "task_histogram": {
+        "1": 15,
+        "2": 46,
+        "3": 47,
+        "4": 2530,
+        "5": 3426
+      },
+      "total_time": 438.02293610572815
+    },
+    {
+      "avg_accuracy": 91.37046735862947,
+      "avg_forgetting": 9.101453731590837,
+      "event_counts": {
+        "append": 6053,
+        "evict": 10804,
+        "refine": 426,
+        "skip": 45
+      },
+      "file": "seed2_pool80.json",
+      "seed": 2,
+      "task_histogram": {
+        "1": 13,
+        "2": 45,
+        "3": 44,
+        "4": 2529,
+        "5": 3422
+      },
+      "total_time": 429.7402205467224
+    },
+    {
+      "avg_accuracy": 90.44986396901385,
+      "avg_forgetting": 10.291034551783099,
+      "event_counts": {
+        "append": 6030,
+        "evict": 10805,
+        "refine": 417,
+        "skip": 76
+      },
+      "file": "seed3_pool80.json",
+      "seed": 3,
+      "task_histogram": {
+        "1": 7,
+        "2": 42,
+        "3": 40,
+        "4": 2526,
+        "5": 3415
+      },
+      "total_time": 419.3133056163788
+    },
+    {
+      "avg_accuracy": 90.92341359068546,
+      "avg_forgetting": 9.686527282674945,
+      "event_counts": {
+        "append": 6056,
+        "evict": 10807,
+        "refine": 415,
+        "skip": 50
+      },
+      "file": "seed4_pool80.json",
+      "seed": 4,
+      "task_histogram": {
+        "1": 5,
+        "2": 41,
+        "3": 38,
+        "4": 2546,
+        "5": 3426
+      },
+      "total_time": 424.8401629924774
+    },
+    {
+      "avg_accuracy": 90.8344015335671,
+      "avg_forgetting": 9.653624215266905,
+      "event_counts": {
+        "append": 6059,
+        "evict": 10815,
+        "refine": 400,
+        "skip": 54
+      },
+      "file": "seed5_pool80.json",
+      "seed": 5,
+      "task_histogram": {
+        "1": 8,
+        "2": 42,
+        "3": 41,
+        "4": 2540,
+        "5": 3428
+      },
+      "total_time": 422.88305616378784
+    }
+  ]
+}

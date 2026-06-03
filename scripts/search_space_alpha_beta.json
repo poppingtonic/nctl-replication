@@ -1,0 +1,29 @@
+{
+  "parameters": {
+    "min_segment": {
+      "type": "fixed",
+      "value": 2048
+    },
+    "posterior_temp": {
+      "type": "fixed",
+      "value": 0
+    },
+    "pool_update_policy": {
+      "type": "fixed",
+      "value": "paper"
+    },
+    "pool_alpha": {
+      "type": "float",
+      "low": -1.0,
+      "high": 2.0
+    },
+    "pool_beta": {
+      "type": "categorical",
+      "choices": [0, 5, 10]
+    },
+    "pool_reservoir": {
+      "type": "categorical",
+      "choices": [64, 128]
+    }
+  }
+}

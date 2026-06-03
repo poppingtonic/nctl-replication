@@ -1,0 +1,52 @@
+{
+  "parameters": {
+    "pool": {
+      "type": "categorical",
+      "choices": [
+        15,
+        30
+      ]
+    },
+    "min_segment": {
+      "type": "fixed",
+      "value": 16
+    },
+    "posterior_temp": {
+      "type": "fixed",
+      "value": 1.0
+    },
+    "pool_update_policy": {
+      "type": "fixed",
+      "value": "paper"
+    },
+    "pool_alpha": {
+      "type": "categorical",
+      "choices": [
+        0.0,
+        0.2
+      ]
+    },
+    "pool_beta": {
+      "type": "categorical",
+      "choices": [
+        0.0,
+        0.06
+      ]
+    },
+    "pool_reservoir": {
+      "type": "categorical",
+      "choices": [
+        10,
+        100
+      ]
+    },
+    "chunk_size": {
+      "type": "fixed",
+      "value": 1024
+    },
+    "active_state": {
+      "type": "fixed",
+      "value": "per-level"
+    }
+  }
+}

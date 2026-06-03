@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+
+# CUDA / native build artifacts
+*.so
+*.o
+*.obj
+build/
+dist/
+
+# Datasets
+data/*.bin
+data/*.gz
+data/*.idx*
+data/raw/
+
+# Experiment tracking and generated outputs
+mlruns/
+scripts/sweep_results/**/*.log
+scripts/sweep_results/**/progress.log
+scripts/sweep_results/optuna*/
+scripts/sweep_results/mlruns/
+
+# Keep selected summary artifacts possible, but ignore ad-hoc top-level dumps.
+scripts/sweep_results/mnist_*.json
+scripts/sweep_results/mnist_*.log
+scripts/sweep_results/*_provenance_*.json
+scripts/sweep_results/*_provenance_*_report.txt
+
+# Local editor / OS files
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,12 @@
+{
+  "active_state": "per-level",
+  "chunk_size": 1024,
+  "min_segment": 512,
+  "pool": 30,
+  "pool_alpha": 0.0,
+  "pool_beta": 0.0,
+  "pool_reservoir": 10,
+  "pool_update_policy": "paper",
+  "posterior_temp": 1.0,
+  "prediction_mode": "ptw_dp"
+}

@@ -1,0 +1,33 @@
+{
+  "direction": "maximize",
+  "duration_s": 385.1907196044922,
+  "metric": "avg_accuracy",
+  "metrics": {
+    "avg_accuracy_max": 78.08569958885468,
+    "avg_accuracy_mean": 78.08569958885468,
+    "avg_accuracy_min": 78.08569958885468,
+    "avg_forgetting_max": 25.348771911261377,
+    "avg_forgetting_mean": 25.348771911261377,
+    "avg_forgetting_min": 25.348771911261377,
+    "total_time_max": 379.1392059326172,
+    "total_time_mean": 379.1392059326172,
+    "total_time_min": 379.1392059326172
+  },
+  "params": {
+    "active_state": "per-level",
+    "chunk_size": 1024,
+    "min_segment": 512,
+    "pool": 30,
+    "pool_alpha": 0.0,
+    "pool_beta": 0.0,
+    "pool_reservoir": 10,
+    "pool_update_policy": "paper",
+    "posterior_temp": 1.0,
+    "prediction_mode": "ptw_dp"
+  },
+  "seeds": [
+    1
+  ],
+  "trial_number": 0,
+  "value": 78.08569958885468
+}

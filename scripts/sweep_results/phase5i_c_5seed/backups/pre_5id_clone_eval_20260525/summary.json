@@ -1,0 +1,55 @@
+{
+  "avg_accuracy_mean": 91.25858392735165,
+  "avg_accuracy_std": 0.11188343127781053,
+  "avg_forgetting_mean": 9.242111196543174,
+  "avg_forgetting_std": 0.1406574649523371,
+  "backup_dir": "rust-fmn/scripts/sweep_results/phase5i_c_5seed/backups/pre_5id_clone_eval_20260525",
+  "backup_name": "pre_5id_clone_eval_20260525",
+  "created_utc": "2026-05-25T11:49:58Z",
+  "experiment": "phase5i_c_5seed",
+  "n_files": 2,
+  "reason": "Preserve seed outputs produced before Phase 5I-D in-place evaluate_task relaunch; these used the pre-5I-D clone-based evaluation path.",
+  "results": [
+    {
+      "avg_accuracy": 91.14670049607385,
+      "avg_forgetting": 9.382768661495511,
+      "event_counts": {
+        "append": 6064,
+        "evict": 10805,
+        "refine": 411,
+        "skip": 48
+      },
+      "file": "seed1_pool80.json",
+      "seed": 1,
+      "task_histogram": {
+        "1": 15,
+        "2": 46,
+        "3": 47,
+        "4": 2530,
+        "5": 3426
+      },
+      "total_time": 490.2351906299591
+    },
+    {
+      "avg_accuracy": 91.37046735862947,
+      "avg_forgetting": 9.101453731590837,
+      "event_counts": {
+        "append": 6053,
+        "evict": 10804,
+        "refine": 426,
+        "skip": 45
+      },
+      "file": "seed2_pool80.json",
+      "seed": 2,
+      "task_histogram": {
+        "1": 13,
+        "2": 45,
+        "3": 44,
+        "4": 2529,
+        "5": 3422
+      },
+      "total_time": 483.6083929538727
+    }
+  ],
+  "source_dir": "rust-fmn/scripts/sweep_results/phase5i_c_5seed"
+}

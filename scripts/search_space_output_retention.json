@@ -1,0 +1,57 @@
+{
+  "parameters": {
+    "pool": {
+      "type": "fixed",
+      "value": 12
+    },
+    "output_pool": {
+      "type": "categorical",
+      "choices": [
+        12,
+        16,
+        24,
+        32,
+        48,
+        64,
+        96
+      ]
+    },
+    "min_segment": {
+      "type": "fixed",
+      "value": 2048
+    },
+    "posterior_temp": {
+      "type": "fixed",
+      "value": 0
+    },
+    "pool_update_policy": {
+      "type": "fixed",
+      "value": "paper"
+    },
+    "pool_alpha": {
+      "type": "float",
+      "low": 2.3,
+      "high": 3.1
+    },
+    "pool_beta": {
+      "type": "fixed",
+      "value": 0
+    },
+    "pool_reservoir": {
+      "type": "fixed",
+      "value": 128
+    },
+    "chunk_size": {
+      "type": "categorical",
+      "choices": [
+        1024,
+        4096,
+        8192
+      ]
+    },
+    "close_task_boundary": {
+      "type": "fixed",
+      "value": 1
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "parameters": {
+    "pool": {
+      "type": "categorical",
+      "choices": [16, 32, 64]
+    },
+    "min_segment": {
+      "type": "fixed",
+      "value": 2048
+    },
+    "posterior_temp": {
+      "type": "fixed",
+      "value": 0
+    },
+    "pool_update_policy": {
+      "type": "fixed",
+      "value": "paper"
+    },
+    "pool_alpha": {
+      "type": "float",
+      "low": 0.5,
+      "high": 4.0
+    },
+    "pool_beta": {
+      "type": "categorical",
+      "choices": [0, 5]
+    },
+    "pool_reservoir": {
+      "type": "categorical",
+      "choices": [64, 128]
+    },
+    "chunk_size": {
+      "type": "categorical",
+      "choices": [512, 1024, 2048, 4096]
+    }
+  }
+}
