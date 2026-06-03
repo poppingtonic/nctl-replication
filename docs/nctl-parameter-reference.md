@@ -38,11 +38,11 @@ python3 scripts/run_split_mnist.py mnist \
   --seed 1 --json-out run.json
 ```
 
-In `run-03-06-2026-17:47:27.json`, `pool_oldest_floor=6` reached 95.20%
-average accuracy with 4.32% average forgetting on seed 1, 0.13 percentage
-points above the paper's 95.07 target. The earlier five-seed
-`pool_oldest_floor=4` sweep reached 95.043% average accuracy. The recipe is
-task-free: it uses insertion indices, not benchmark task IDs.
+The five-seed `pool_oldest_floor=6` rerun reached 95.248% average accuracy
+with 4.242% average forgetting, 0.178 percentage points above the paper's
+95.07 target. The earlier five-seed `pool_oldest_floor=4` sweep reached
+95.043% average accuracy. The recipe is task-free: it uses insertion indices,
+not benchmark task IDs.
 
 ## Run Parameters
 
@@ -85,7 +85,7 @@ task-free: it uses insertion indices, not benchmark task IDs.
 | `--pool-beta` | `inf` | `pool_beta` | Threshold used by `pool_update_policy=paper` to decide whether to skip/add a segment to the pool. | Values used in successful Split-MNIST runs include `0.0`. |
 | `--pool-reservoir` | `64` | `pool_reservoir` | Reservoir size for the paper-style pool update heuristic. | Split-MNIST reference task-free runs used `10`. Search `[10, 32, 64, 128]` when adapting to new task lengths. |
 | `--pool-evict-policy` | `fifo` | use `--run-arg` in Optuna currently | Which slot is overwritten when a full pool accepts a new snapshot. Choices: `fifo`, `task-floor`, `age-diversity`, `age-bucket-floor`, `age-diversity-oldest-floor`. | For task-free paper-fidelity candidates, prefer `age-diversity-oldest-floor`. `task-floor` is diagnostic only because it uses task IDs. |
-| `--pool-oldest-floor` | `2` | use `--run-arg` in Optuna currently | For `age-diversity-oldest-floor`, protects the oldest `k` slots before applying age-diversity to the remainder. Inert for other policies. | Tunes early-task retention. Split-MNIST floor `2` reached 94.60%; floor `4` reached 95.04% across five seeds; floor `6` reached 95.20% with 4.32% forgetting on the recorded seed-1 run. |
+| `--pool-oldest-floor` | `2` | use `--run-arg` in Optuna currently | For `age-diversity-oldest-floor`, protects the oldest `k` slots before applying age-diversity to the remainder. Inert for other policies. | Tunes early-task retention. Split-MNIST floor `2` reached 94.60%; floor `4` reached 95.04%; floor `6` reached 95.248% with 4.242% forgetting across five seeds. |
 
 Eviction policies:
 

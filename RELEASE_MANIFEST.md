@@ -103,6 +103,7 @@ Use semantic research-artifact tags, for example:
 nctl-replication-v0.1
 ```
 
-The release notes should state that the strict task-free floor-6 seed-1 run
-reaches `95.20%` average accuracy with `4.32%` average forgetting, while the
-floor-4 five-seed sweep remains a near replication (`95.043%` vs `95.07%`).
+The release notes should state that the strict task-free floor-6 five-seed run
+reaches `95.248%` average accuracy with `4.242%` average forgetting, crossing
+the paper target by 0.178 percentage points. The floor-4 five-seed sweep remains
+a near replication (`95.043%` vs `95.07%`).

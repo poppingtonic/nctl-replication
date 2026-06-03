@@ -31,6 +31,10 @@ without rerunning FIFO, using the recorded seed-1 recipe including
 `age-diversity-oldest-floor_floor6_seed*.json` and
 `summary_floor6_nofifo.json`.
 
+The floor-6 five-seed summary reached `95.2479%` mean accuracy and `4.2419%`
+mean forgetting, crossing the paper's `95.07%` target by `0.1779` percentage
+points.
+
 ## Required validation
 The `fifo` arm must reproduce 90.94% +/- 0.31 mean accuracy from
 `scripts/sweep_results/phase5k_task_floor/summary_ab.json`

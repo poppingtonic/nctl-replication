@@ -23,3 +23,6 @@ bash scripts/sweep_results/phase5o_age_diversity_oldest_floor/run_floor6_nofifo.
 That reruns the floor-6 five-seed candidate and writes
 `summary_floor6_nofifo.json`. The older floor-4 candidate-only harness remains
 available as `run_ab_nofifo.sh`.
+
+Current floor-6 headline: `95.2479%` mean accuracy, `4.2419%` mean forgetting,
+and `+0.1779` percentage points over the paper target across five seeds.

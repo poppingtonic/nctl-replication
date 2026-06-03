@@ -13,11 +13,11 @@ The current research target is the NCTL paper's Split-MNIST result:
 ```
 
 The strict reproduction path is task-free and does not leak task ids. The
-strongest seed-1 task-free run recorded so far is
-`age-diversity-oldest-floor` with `pool_oldest_floor=6`, at `95.20%` average
-accuracy and `4.32%` average forgetting, 0.13 percentage points above the paper
-target. The earlier five-seed floor-4 sweep reached `95.043%` average accuracy,
-0.027 percentage points below the target.
+strongest five-seed task-free run recorded so far is
+`age-diversity-oldest-floor` with `pool_oldest_floor=6`, at `95.248%` average
+accuracy and `4.242%` average forgetting, 0.178 percentage points above the
+paper target. The earlier five-seed floor-4 sweep reached `95.043%` average
+accuracy, 0.027 percentage points below the target.
 
 ## Where This Fits
 
@@ -107,8 +107,8 @@ The useful sequence of diagnostics was:
    the earliest task under-retained.
 4. `age-diversity-oldest-floor` protects the oldest few snapshots and then
    applies age-diversity to the rest. With floor 4 it reached `95.043%` on the
-   five-seed mean, essentially at the paper line; with floor 6, the recorded
-   seed-1 run reached `95.20%` average accuracy with `4.32%` forgetting.
+   five-seed mean, essentially at the paper line; with floor 6, the five-seed
+   mean reached `95.248%` average accuracy with `4.242%` forgetting.
 
 Relevant sweep harnesses live in:
 

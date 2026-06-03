@@ -88,6 +88,14 @@ The summary is written to:
 scripts/sweep_results/phase5o_age_diversity_oldest_floor/summary_floor6_nofifo.json
 ```
 
+Expected headline:
+
+```text
+floor6_candidate.avg_accuracy_mean ~= 95.2479
+floor6_candidate.avg_forgetting_mean ~= 4.2419
+floor6_delta_to_paper_target ~= +0.1779
+```
+
 The older floor-4 candidate-only rerun remains available as:
 
 ```bash

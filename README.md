@@ -12,21 +12,21 @@ The target paper result for Split-MNIST is:
 95.07% average accuracy
 ```
 
-The strongest strict task-free seed-1 run captured by this artifact is:
+The strongest strict task-free five-seed result captured by this artifact is:
 
 ```text
-95.20% average accuracy
-4.32% average forgetting
+95.248% average accuracy
+4.242% average forgetting
 age-diversity-oldest-floor, pool_oldest_floor=6
-0.13 percentage points above the paper target
+0.178 percentage points above the paper target
 ```
 
-The earlier five-seed floor-4 sweep reached `95.043%` average accuracy, 0.027
-percentage points below the paper target.
+The earlier floor-4 sweep reached `95.043%` average accuracy, 0.027 percentage
+points below the paper target.
 
 Diagnostic task-ID-assisted retention reaches about `95.46%`, identifying model
-pool retention as the remaining gap.  Because that diagnostic consumes
-benchmark task IDs, it is not a paper-faithful result.
+pool retention as the key lever. Because that diagnostic consumes benchmark
+task IDs, it is not a paper-faithful result.
 
 ## Repository Layout
 
