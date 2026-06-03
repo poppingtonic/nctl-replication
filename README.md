@@ -119,5 +119,15 @@ environment, but users should expect to adapt `scripts/nctl_bench/cuda/BUILD.md`
 for other CUDA/PyTorch/nvcc combinations.
 
 Generated logs, MLflow directories, and exploratory sweep dumps are not part of
-the clean source surface.  Keep source/harnesses in git and publish large result
+the clean source surface.  We keep source/harnesses in git and publish large result
 bundles as attached release artifacts when needed.
+
+## Based On
+@article{Wang2020ACP,
+  title={A Combinatorial Perspective on Transfer Learning},
+  author={Jianan Wang and Eren Sezener and David Budden and Marcus Hutter and Joel Veness},
+  journal={ArXiv},
+  year={2020},
+  volume={abs/2010.12268},
+  url={https://api.semanticscholar.org/CorpusID:225062550}
+}

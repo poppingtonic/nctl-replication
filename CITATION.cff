@@ -3,10 +3,10 @@ title: "Neural Combinatorial Transfer Learning Split-MNIST Replication"
 message: "If you use this replication artifact, please cite the original NCTL paper and this software artifact."
 type: software
 authors:
-  - name: "Forget-me-not Process Contributors"
-repository-code: "https://example.invalid/neural_combinatorial_transfer_learning"
+  - name: "Brian Muhia"
+repository-code: "https://github.com/poppingtonic/nctl-replication"
 abstract: >-
-  GPU implementation, benchmark runners, and evaluation harnesses for a
+  PyTorch/CUDA GPU implementation, benchmark runners, and evaluation harnesses for a
   Split-MNIST Neural Combinatorial Transfer Learning (NCTL) replication effort.
   The artifact includes fused CUDA kernels for FMN-wrapped Gated Geometric
   Mixer (GGM) nodes, paper-fidelity PTW-DP prediction, and task-free model-pool
