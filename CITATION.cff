@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Neural Combinatorial Transfer Learning Split-MNIST Replication"
+title: "Replication: Neural Combinatorial Transfer Learning on Split-MNIST"
 message: "If you use this replication artifact, please cite the original NCTL paper and this software artifact."
 type: software
 authors:
