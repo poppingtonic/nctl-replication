@@ -1,4 +1,5 @@
 # Neural Combinatorial Transfer Learning (NCTL) Replication
+[![DOI](https://zenodo.org/badge/1258361988.svg)](https://doi.org/10.5281/zenodo.20560811)
 
 This repository is a release-oriented artifact for the GPU Split-MNIST /
 Split-Fashion-MNIST Neural Combinatorial Transfer Learning (NCTL) replication
@@ -49,6 +50,11 @@ RELEASE_MANIFEST.md                   # release contents and artifact boundaries
 ```
 
 The implementation front page is `scripts/nctl_bench/README.md`.
+
+## Hardware and Memory Usage
+
+ Experiments were conducted on a `NVIDIA RTX 2080 Ti`, and the kernel compilation scripts 
+are set for compute_75. Total memory consumed is `7.656 GB` of VRAM,
 
 ## Quick Start
 
@@ -127,6 +133,7 @@ the clean source surface.  We keep source/harnesses in git and publish large res
 bundles as attached release artifacts when needed.
 
 ## Based On
+```
 @article{Wang2020ACP,
   title={A Combinatorial Perspective on Transfer Learning},
   author={Jianan Wang and Eren Sezener and David Budden and Marcus Hutter and Joel Veness},
@@ -135,3 +142,4 @@ bundles as attached release artifacts when needed.
   volume={abs/2010.12268},
   url={https://api.semanticscholar.org/CorpusID:225062550}
 }
+```
