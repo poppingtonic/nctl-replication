@@ -1,11 +1,14 @@
 # Neural Combinatorial Transfer Learning (NCTL) Replication
 [![DOI](https://zenodo.org/badge/1258361988.svg)](https://doi.org/10.5281/zenodo.20560811)
 
-This repository is a release-oriented artifact for the GPU Split-MNIST /
-Split-Fashion-MNIST Neural Combinatorial Transfer Learning (NCTL) replication
-effort.  It contains the NCTL implementation, CUDA kernels, benchmark runners,
-evaluation/sweep harnesses, focused tests, and documentation needed to rerun the
-strict task-free replication experiments.
+This repository is a release-oriented artifact for an attempt to
+replicate the Neural Combinatorial Transfer Learning (NCTL) algorithm
+from the 2020 paper
+[__"A Combinatorial Perspective on Transfer Learning"__](arxiv.org/abs/2010.12268),
+specifically validated on GPU, for the Split-MNIST / Split-Fashion-MNIST
+datasets.  It contains the NCTL implementation, CUDA kernels, benchmark
+runners, evaluation/sweep harnesses, focused tests, and documentation
+needed to rerun the strict task-free replication experiments.
 
 The target paper result for Split-MNIST is:
 
